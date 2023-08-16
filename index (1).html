@@ -1,0 +1,45 @@
+                                                
+Please use mentioned labels for each categorical features for efficient model working
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Zenith's Model</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="airline" placeholder="Airline" required="required" />
+        <input type="text" name="source_city" placeholder="source_city" required="required" />
+    	<input type="text" name="departure_time" placeholder="departure_time" required="required" />
+        <input type="text" name="stops" placeholder="number of stops" required="required" />
+    	<input type="text" name="arrival_time" placeholder="arrival_time" required="required" />
+        <input type="text" name="destination_city" placeholder="destination_city" required="required" />
+    	<input type="text" name="class" placeholder="class" required="required" />
+        <input type="text" name="duration" placeholder="duration" required="required" />
+        <input type="text" name="days_left" placeholder="days_left" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Price</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
